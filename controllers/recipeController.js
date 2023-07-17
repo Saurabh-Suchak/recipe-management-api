@@ -49,9 +49,9 @@ exports.getRecipeById = (req, res) => {
       .catch((error) => {
         res.status(500).json({ error: 'An error occurred' });
       });
-  };
+};
 
-  exports.updateRecipe = (req, res) => {
+exports.updateRecipe = (req, res) => {
     const { id } = req.params;
     const { title, ingredients, instructions } = req.body;
   
@@ -65,9 +65,9 @@ exports.getRecipeById = (req, res) => {
       .catch((error) => {
         res.status(500).json({ error: 'An error occurred' });
       });
-  };
+};
 
-  exports.deleteRecipe = (req, res) => {
+exports.deleteRecipe = (req, res) => {
     const { id } = req.params;
   
     Recipe.findByIdAndDelete(id)
@@ -80,4 +80,4 @@ exports.getRecipeById = (req, res) => {
       .catch((error) => {
         res.status(500).json({ error: 'An error occurred' });
       });
-  };
+};
